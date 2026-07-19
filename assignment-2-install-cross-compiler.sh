@@ -8,14 +8,14 @@ if ! [  -d "/home/mycroftsan/arm-cross-compiler" ]
     echo "Target directory exists."
 fi
 
-if (curl -o "/home/mycroftsan/Downloads/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz" https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-elf.tar.xz)
+if wget -O /home/mycroftsan/Downloads/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz
   then 
     echo "Downloaded the cross-compiler."
   else
     echo "Cross-compiler download failed."
     exit 1
 fi
-if (curl -o "/home/mycroftsan/Downloads/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz.sha256asc" https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz.sha256asc)
+if wget -O /home/mycroftsan/Downloads/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz.sha256asc https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz.sha256asc
   then
     echo "Downloaded sha256asc. Checking."
     cd /home/mycroftsan/Downloads
